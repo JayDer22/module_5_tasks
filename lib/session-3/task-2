@@ -1,0 +1,28 @@
+Q.2. Conceptually design a database schema for a Zomato-style food delivery app: define a table for Restaurants with columns for id, name, location, and rating. Write out the CREATE TABLE SQL statement as a string in Dart.
+
+Ans:-
+
+In a food delivery application like Zomato, a Restaurants table is used to store the basic information of restaurants. It contains details such as the restaurant's ID, name, location, and rating.
+
+| **Column Name** | **Data Type** | **Purpose**                                 |
+| --------------- | ------------- | ------------------------------------------- |
+| **id**          | INTEGER       | Unique ID for each restaurant (Primary Key) |
+| **name**        | TEXT          | Stores the restaurant name                  |
+| **location**    | TEXT          | Stores the restaurant's address or city     |
+| **rating**      | REAL          | Stores the restaurant's average rating      |
+
+
+String restaurantTable = '''
+CREATE TABLE Restaurants (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  location TEXT NOT NULL,
+  rating REAL
+);
+''';
+
+Explanation
+id → Stores a unique ID for every restaurant and increases automatically.
+name → Stores the name of the restaurant.
+location → Stores the restaurant's address or city.
+rating → Stores the average customer rating (for example, 4.6).
