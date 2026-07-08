@@ -1,0 +1,17 @@
+Q.4. Draw an analogy between a SQLite database table and a real-world example from an app you use (e.g., an Instagram followers list or a Flipkart order history), describing what the table, rows, and columns would represent.
+
+
+Ans:-
+
+A SQLite database table can be compared to the Order History section of the Flipkart app. It stores all order details in a well-organized format, making it easy to view and manage customer purchases.
+
+Table → Represents the complete Order History.
+Rows → Represent each individual order placed by the customer.
+Columns → Represent the information related to each order, such as Order ID, Product Name, Price, Order Date, and Delivery Status.
+
+| Order ID | Product Name      | Price     | Order Date     | Delivery Status |
+| -------- | --------------    | --------- | -------------- | --------------- |
+| 101      | Wireless Mouse    | ₹599      | 10-06-2026     | Delivered       |
+| 102      | Bluetooth Speaker | ₹1,499    | 15-06-2026     | Shipped         |
+| 103      | Mobile Cover      | ₹299      | 20-06-2026     | Pending         |
+
