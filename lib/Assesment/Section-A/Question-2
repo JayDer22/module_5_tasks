@@ -1,0 +1,25 @@
+Question :- 2
+
+Compare using a TextFormField inside a Form widget with a GlobalKey versus writing
+manual validation logic inside setState. In this checkout context, what specific advantage does
+the Form widget approach offer, and when might manual validation still be the better choice?
+
+
+Ans :- 
+
+Using a TextFormField inside a Form widget with a GlobalKey is the recommended approach for validating a shipping address form because it provides a built-in,organized, and reusable validation system. 
+Each TextFormField has its own validator function, and calling formKey.currentState!.validate() checks all fields at once before allowing checkout.
+
+Form Widget with GlobalKey : -
+
+-> Uses built-in validation through validator.
+-> Validates all fields with a single call (validate()).
+-> Displays error messages automatically below each field.
+-> Keeps the code clean, readable, and easy to maintain.
+-> Prevents checkout until all required fields (street address and 6-digit pincode) are valid.
+
+Manual Validation with setState : -
+
+-> Validation logic is written manually inside setState().
+-> The developer must check each field, update error messages, and manage the UI.
+-> Requires more code and is harder to maintain for larger forms.
