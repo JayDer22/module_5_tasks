@@ -9,7 +9,7 @@ class CredRewardsScreen extends StatefulWidget {
 }
 
 class _CredRewardsScreenState extends State<CredRewardsScreen> {
-  int _points = 0;
+  var _points = 0;
 
   @override
   void initState() {

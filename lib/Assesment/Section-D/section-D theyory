@@ -1,0 +1,68 @@
+1. The exact prompt(s) you gave the AI tool.
+
+Create a simple Flutter application using SQLite (`sqflite`) to manage product order records.
+
+Requirements:
+
+* Create a SQLite database with a table named `orders`.
+* The table should have three columns:
+
+  * `id` (INTEGER, auto-increment primary key)
+  * `product_name` (TEXT)
+  * `quantity` (INTEGER)
+* On the first app launch, check if the table is empty. If it is empty, insert at least 3 hardcoded sample product records.
+* Display all product records in a `ListView` on the main screen.
+* When the user taps on a list item, open a dialog that allows changing the quantity.
+* Update the selected record in the database and refresh the list after the update.
+* Add a delete button for each list item. When pressed, delete that record from SQLite and immediately refresh the UI.
+* Use proper asynchronous programming with `async` and `await`.
+* Provide complete Flutter code with required imports and explain the main parts briefly.
+
+
+2. The AI's original code and your corrected version
+
+ai code:
+Future<void> insertSampleData() async {
+  await db.insert('orders', {
+    'product_name': 'Laptop',
+    'quantity': 2,
+  });
+
+  await db.insert('orders', {
+    'product_name': 'Phone',
+    'quantity': 5,
+  });
+
+  await db.insert('orders', {
+    'product_name': 'Keyboard',
+    'quantity': 3,
+  });
+}
+
+fixed code:
+Future<void> insertSampleData() async {
+  final result = await db.query('orders');
+
+  if (result.isEmpty) {
+    await db.insert('orders', {
+      'product_name': 'Laptop',
+      'quantity': 2,
+    });
+
+    await db.insert('orders', {
+      'product_name': 'Phone',
+      'quantity': 5,
+    });
+
+    await db.insert('orders', {
+      'product_name': 'Keyboard',
+      'quantity': 3,
+    });
+  }
+}
+
+3. A 3–4 line note explaining what you changed and why the AI's version needed it.
+
+During testing, I found that the AI-generated code inserted sample records every time the app started, creating duplicate data in the database.
+I modified the insert function to first check whether the table is empty before adding sample records.
+This ensures that the sample data is added only on the first app launch and improves database handling.

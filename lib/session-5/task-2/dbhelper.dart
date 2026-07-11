@@ -36,7 +36,6 @@ class DbHelper {
 
   Future<int> insertdata(Map<String, dynamic> row) async {
     Database db = await instance.database;
-    // Simulating a delay to show the loading indicator
     await Future.delayed(const Duration(seconds: 2));
     return await db.insert(table, row);
   }
