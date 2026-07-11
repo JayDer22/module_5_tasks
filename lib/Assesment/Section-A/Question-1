@@ -1,0 +1,18 @@
+Question :- 1
+
+Why should the product's data be passed through navigation arguments rather thanre-fetching it from the server on the detail screen? Describe the Flutter approach you would use,and explain one trade-off this introduces when the product object includes a large array of
+images or variant options
+
+
+Ans :-
+
+The product's data should be passed through navigation arguments instead of re-fetching it from the server because it improves performance and provides a better user experience.
+Since the product information is already available on the home screen, 
+passing it directly avoids an unnecessary network request, reduces loading time, saves bandwidth, and allows the detail screen to open instantly. 
+It also works better when the device has a slow or unstable internet connection.
+
+Trade-off
+
+A disadvantage of passing the entire product object is that it may contain large arrays of images or variant options,
+increasing memory usage and making navigation slower because a large amount of data is transferred between screens.
+It can also make the app less efficient if the object is very large.
