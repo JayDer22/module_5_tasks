@@ -1,0 +1,15 @@
+Question :- 6
+
+Walk through the asynchronous sequence of the delete operation: how you call the
+database method, how you update the widget's state, and how you handle the scenario where
+the database throws an exception midway through the operation.
+
+Ans :- 
+
+When the user taps the Cancel Order button, the app starts an asynchronous delete operation.
+Because deleting data from a SQLite database can take some time,
+the app does not freeze while waiting.Instead, it continues to respond to the user.
+The app calls the database's delete method and waits for it to finish using await. 
+Once the database confirms that the order has been deleted successfully, 
+the app updates its local order list and calls setState(). Calling setState() tells Flutter that the data has changed,
+so it rebuilds the widget and the deleted order disappears from the screen immediately.
