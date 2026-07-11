@@ -1,0 +1,22 @@
+Question :- 3
+
+Justify the choice of GridView.builder for the Category page and ListView.builder forthe Search results screen. Explain how crossAxisCount and itemExtent affect scroll performance,and describe what happens if a Column widget is used instead of a builder constructor when
+rendering 200 product entries.
+
+
+Ans :-
+
+-> For the Category page, I would use GridView.builder because the products need to be shown in 2 columns. 
+It makes the products look neat and allows users to see more items on the screen at the same time.
+
+-> For the Search results page, I would use ListView.builder because the products are shown one below another.
+This is easier for users to read product names, prices, and descriptions.
+
+-> The crossAxisCount property is used in GridView to decide how many columns will be displayed.
+For example, crossAxisCount: 2 means the products will be shown in 2 columns.
+
+-> The itemExtent property is used in ListView to give every item the same height. 
+Since Flutter already knows the height of each item, it can scroll faster and more smoothly.
+
+-> If I use a Column widget to display 200 products, Flutter will create all 200 product widgets at the same time. 
+This uses more memory and can make the app slow or lag. A Column is also not scrollable by itself.
