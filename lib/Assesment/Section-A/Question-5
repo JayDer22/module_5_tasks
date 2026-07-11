@@ -1,1 +1,23 @@
+Question 5 :-
 
+Explain why SharedPreferences is appropriate for storing the last used shipping
+address but not for the order history. What specific structural limitation of SharedPreferences
+causes it to fail when each record has multiple fields, and what does SQLite offer that resolves
+this?
+
+Ans :-
+
+
+SharedPreferences is suitable for storing the last used shipping address because it is meant for storing small amounts of simple data such as a single string, number, or boolean. 
+Since there is only one shipping address that needs to be remembered, SharedPreferences is a simple and fast choice.
+However, SharedPreferences is not suitable for storing the order history. 
+An order history contains multiple records, and each record has multiple fields, such as:
+Product Name
+Quantity Ordered
+Purchase Timestamp
+The main structural limitation of SharedPreferences is that it stores data only as key-value pairs. 
+It cannot create tables with rows and columns or easily manage multiple records where each record contains several related fields.
+SQLite solves this problem by providing a relational database. It stores data in tables, where:
+Each row represents one order.
+Each column represents a field (Product Name, Quantity, Purchase Timestamp).
+SQLite also supports efficient CRUD operations (Create, Read, Update, Delete), searching, sorting, filtering, and handling large amounts of structured data.
