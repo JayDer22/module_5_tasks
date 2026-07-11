@@ -1,0 +1,23 @@
+Question :- 4 
+
+How does maintaining selectedIndex using setState in the parent widget differ from
+managing it through a Provider? What specific problem arises when setState alone is used and a
+promotional push notification deep-links the customer directly into the Cart tab?
+
+Ans :-
+
+-> In this e-commerce app, the BottomNavigationBar has four tabs: Home, Search, Cart, and Profile.
+
+-> If I use setState, the selectedIndex is stored only in the parent widget. When the user taps a tab, setState updates the index and the screen changes.
+This method is simple and works well for small apps.
+
+-> If I use Provider, the selectedIndex is stored in a shared state. 
+Any widget in the app can read or change the selected tab without passing data through many widgets. 
+This is better for larger apps because the navigation state is available everywhere.
+
+-> The problem with using setState only happens when the app receives a promotional push notification that opens the Cart tab directly. 
+Since selectedIndex is only stored inside one widget, the app may still open with the default Home tab instead of the Cart tab.
+The navigation state is not shared, so it is difficult for other parts of the app to change the selected tab.
+
+-> With Provider, the notification handler can update the shared selectedIndex to the Cart tab before the screen is shown. 
+The app will open directly on the Cart page, giving the user the correct experience.
